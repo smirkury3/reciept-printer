@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PRINTER="/dev/ttyUSB0"
 exec "$PRINTER"
 
