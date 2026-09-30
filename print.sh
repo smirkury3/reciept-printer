@@ -23,26 +23,28 @@ for ((i = 2; i <= 5; i++))
 do
     case "${!i}" in
 	-s)
-	printf '\x1d\x21\x00'
+	printf '\x1d\x21\x00' > "$PRINTER"
 	;;
 	-g)
-	printf 'x1d\x21\x22'
+	printf '\x1d\x21\x22' > "$PRINTER"
 	;;
 	-l)
-	printf '\x1b\x61\x00'
+	printf '\x1b\x61\x00' > "$PRINTER"
 	;;
 	-r)
-	printf '\x1b\x61\x02'
+	printf '\x1b\x61\x02' > "$PRINTER"
 	;;
 	-b)
-	printf '\x1b\x45\x01'
+	printf '\x1b\x45\x01' > "$PRINTER"
+	;;
 	-u)
-	printf '\x1b\x2d\x01'
+	printf '\x1b\x2d\x01' > "$PRINTER"
 	;;
 	-U)
-	printf '\x1b\x2d\x02'
+	printf '\x1b\x2d\x02' > "$PRINTER"
+	;;
 esac
 done
 
-printf "$1"
+printf '%s' "$TEXT" > "$PRINTER"
 
