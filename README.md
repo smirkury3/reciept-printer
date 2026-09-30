@@ -9,3 +9,5 @@ syntax is: Usage: ./print 'text' (formatting)
 -b) makes text bold
 -u) single underlines text
 -U) double underlines text
+
+port is defaulted to USB0, if your port is different, you can change the top line
