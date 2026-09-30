@@ -19,7 +19,7 @@ fi
 
 printf '\x1d\x21\x11\x1b\x61\x01\x1b\x45\x00\x1b\2d\x00'
 
-for ((i = 2; i < 5; i++))
+for ((i = 2; i <= 5; i++))
 do
     case "${!i}" in
 	-s)
