@@ -1,4 +1,5 @@
 PRINTER="/dev/ttyUSB0"
+exec "$PRINTER"
 
 TEXT="$1"
 
@@ -23,19 +24,19 @@ for ((i = 2; i <= 5; i++))
 do
     case "${!i}" in
 	-s)
-	printf '\x1d\x21\x00' > "$PRINTER"
+	printf '\x1d\x21\x00'
 	;;
 	-g)
-	printf '\x1d\x21\x22' > "$PRINTER"
+	printf '\x1d\x21\x22'
 	;;
 	-l)
-	printf '\x1b\x61\x00' > "$PRINTER"
+	printf '\x1b\x61\x00'
 	;;
 	-r)
-	printf '\x1b\x61\x02' > "$PRINTER"
+	printf '\x1b\x61\x02'
 	;;
 	-b)
-	printf '\x1b\x45\x01' > "$PRINTER"
+	printf '\x1b\x45\x01'
 	;;
 	-u)
 	printf '\x1b\x2d\x01' > "$PRINTER"
